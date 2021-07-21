@@ -1,0 +1,21 @@
+{
+  "name": "Potentiostat Shield_DAC",
+  "keywords": "Potentiostat,DAC,digital,analog,convertor,percentage",
+  "description": "Arduino library for a potentiostat shield.\n",
+  "authors":
+  [
+    {
+      "name": "Gustav Wiberg",
+      "email": "g.wiberg@nordicec.com",
+      "maintainer": true
+    }
+  ],
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Guswib/Potentiostat_Shield"
+  },
+  "version": "0.1.0",
+  "frameworks": "arduino",
+  "platforms": "*"
+}
