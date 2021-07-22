@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map For Arduration
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+Potentiostat_Shield	KEYWORD1
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+GetCOM	KEYWORD2
+Read_Analog_Values	KEYWORD2
+PlotData	KEYWORD2
+runECtech	KEYWORD2
+PID_Regulator	KEYWORD2
+Analog_Write	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
