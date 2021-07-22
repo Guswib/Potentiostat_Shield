@@ -22,18 +22,7 @@
 
 
 
-
-//#include <Arduino.h>
-
 #include "Potentiostat_Shield.h"
-/*
-#include "Potentiostat_State.h"
-#include "Potentiostat_EC_Tech.h"
-#include "Potentiostat_Serial_Com.h"
-#include "Potentiostat_SW_PID.h"
-*/
-//#include "MCP_DAC.h" //Using the library in order to use the MCP4921
-
 
 Potentiostat_Shield::Potentiostat_Shield()
 {};
