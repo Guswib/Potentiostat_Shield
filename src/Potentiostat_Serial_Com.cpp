@@ -10,6 +10,11 @@
 
     created 2021
   by Gustav Wiberg
+
+    @section  HISTORY
+
+    v1.0  - First release
+
 */
 /**************************************************************************/
 
@@ -18,7 +23,11 @@
 #include "Potentiostat_EC_Tech.h"
 #include "Potentiostat_Serial_Com.h"
 
-
+/**************************************************************************/
+/*! 
+    @brief  Instantiates a new Potentiostat_Serial_Com
+*/
+/**************************************************************************/
 Potentiostat_Serial_Com::Potentiostat_Serial_Com(Potentiostat_Shield& Pot_in,  Potentiostat_EC_Tech &EC_Tech_in)
 {
   //  Pot= Pot_in;
@@ -26,6 +35,11 @@ Potentiostat_Serial_Com::Potentiostat_Serial_Com(Potentiostat_Shield& Pot_in,  P
 
 }
 
+/**************************************************************************/
+/*! 
+    @brief  Begin the communication
+*/
+/**************************************************************************/
 void Potentiostat_Serial_Com::begin()
 {
     Serial.begin(1000000);
@@ -43,6 +57,16 @@ void Potentiostat_Serial_Com::begin()
     }
 }
 
+/**************************************************************************/
+/*! 
+    @brief  Get commands from the serial port
+
+    @param[in]  Pot
+                The potentiostat shield constructor
+    @param[in]  Tech
+                Potentiostat_EC_Tech constructor
+*/
+/**************************************************************************/
 
 void Potentiostat_Serial_Com::GetCOM(Potentiostat_Shield& Pot,  Potentiostat_EC_Tech &Tech){
 
@@ -99,15 +123,6 @@ void Potentiostat_Serial_Com::GetCOM(Potentiostat_Shield& Pot,  Potentiostat_EC_
                                     
         }
 
-
-//Serial.print(" aaaaa - ");
-Serial.print(" Arguments: ");
-Serial.print(i);
-//Serial.print("RW: ");
-//Serial.println(ReadWrite);
-//Serial.println(inByte); 
-//Serial.println(inByte2);
-Serial.print(COMMAND);Serial.print(" - extra:");Serial.print(COM);Serial.print(" - Case Number: ");
 Serial.println(comSelect);
     switch (comSelect) {
       case 0: // "/? 
@@ -271,6 +286,15 @@ Serial.println(comSelect);
 }  // End of function
 
 
+/**************************************************************************/
+/*! 
+    @brief  Send current data to serial port
+
+    @param[in]  Pot
+                The potentiostat shield constructor
+   
+*/
+/**************************************************************************/
 void Potentiostat_Serial_Com::PlotData(Potentiostat_Shield& Pot)
 {
   unsigned long NewTime=millis();

@@ -10,6 +10,11 @@
 
     created 2021
   by Gustav Wiberg
+
+    @section  HISTORY
+
+    v1.0  - First release
+
 */
 /**************************************************************************/
 
@@ -101,8 +106,11 @@ int Potentiostat_Shield::FX_IRange(int Value)
               }
   
 }
+/**************************************************************************/
+/*! 
+    @brief  Set current range.
 
-////////////////////////////////////////////////////////////////////////
+/**************************************************************************/
 int Potentiostat_Shield::FX_IRange()
 {
    int Rgn=IRange;
@@ -127,13 +135,26 @@ int Potentiostat_Shield::FX_IRange()
 
 
 
-//////////////////////////////////////////////////////////////////////////////
+/**************************************************************************/
+/*! 
+    @brief  Read the ADC
+
+    @param[in]  Pin
+                Analog input pin
+*/
+/**************************************************************************/
+
 float Potentiostat_Shield::FX_ReadADC(int PIN)
 {
     return (float)analogRead(PIN)* ADC_value_2_V;      
 }
 
-///////////////////////////
+/**************************************************************************/
+/*! 
+    @brief  Measure the Virtual ground voltage
+
+*/
+/**************************************************************************/
 float Potentiostat_Shield::FX_Vgnd()
 {
   CellSW=0;
@@ -153,12 +174,23 @@ float Potentiostat_Shield::FX_Vgnd()
   Serial.println(F("mV vs GND"));
   }
 
+/**************************************************************************/
+/*! 
+    @brief  Read the Referece electrode voltage
+*/
+/**************************************************************************/
 float Potentiostat_Shield::Read_valueRE()
 {
   valueRE = FX_ReadADC(PIN_RE)-vGND; //Reads Potential
   AVGvalueRE += valueRE;
   return valueRE;
 }
+/**************************************************************************/
+/*! 
+    @brief  Read voltage from the current-to-voltage converter
+   
+*/
+/**************************************************************************/
 
 float Potentiostat_Shield::Read_valueI()
 {

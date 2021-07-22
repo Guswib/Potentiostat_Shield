@@ -10,6 +10,11 @@
 
     created 2021
   by Gustav Wiberg
+
+    @section  HISTORY
+
+    v1.0  - First release
+
 */
 /**************************************************************************/
 
@@ -18,7 +23,7 @@
 #ifndef _Potentiostat_SW_PID_
 #define _Potentiostat_SW_PID_
 
-#define Potentiostat_SW_PID_LIB_VERSION       (F("0.1.1"))
+#define Potentiostat_SW_PID_LIB_VERSION       (F("1.0.0"))
 
 
 #include <Arduino.h>

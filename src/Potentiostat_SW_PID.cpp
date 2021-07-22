@@ -10,6 +10,11 @@
 
     created 2021
   by Gustav Wiberg
+
+    @section  HISTORY
+
+    v1.0  - First release
+
 */
 /**************************************************************************/
 
@@ -25,11 +30,16 @@ void Potentiostat_SW_PID::begin()
 
 }
 
+/**************************************************************************/
+/*! 
+    @brief  Basic software regulator to set the output voltage
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
-/// Basic software regulator to set the output voltage
-
+    @param[in]  setValue
+                The wanted value       
+    @param[in]  CurV
+                Current factory value
+*/
+/**************************************************************************/
 int Potentiostat_SW_PID::PID(int setValue, int CurV)
 {
   lNewTime_us=micros();
@@ -55,9 +65,13 @@ int Potentiostat_SW_PID::PID(int setValue, int CurV)
   return fREG;
 }
 
+/**************************************************************************/
+/*! 
+    @brief  Sets the output value, scaled to the DAC
 
-/////////////////////////////////////////////////////
-
+   
+*/
+/**************************************************************************/
 int Potentiostat_SW_PID::Output()
 {
 int newValue=((int) fREG + midValue);
