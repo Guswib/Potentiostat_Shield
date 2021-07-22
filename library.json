@@ -1,5 +1,5 @@
 {
-  "name": "Potentiostat Shield_DAC",
+  "name": "Potentiostat Shield",
   "keywords": "Potentiostat,DAC,digital,analog,convertor,percentage",
   "description": "Arduino library for a potentiostat shield.\n",
   "authors":
