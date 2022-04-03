@@ -48,6 +48,10 @@ The following image shows the potentiostat shield PCB.
 
 ![Potentiostat Shield PCB](/assets/images/UNO_Pot_Shield_1_1_s.png)
 
+
+[Potentiostat Shield PCB with higher resolution](/assets/images/UNO_Pot_Shield_1_1.png)
+
+
 ### Compoents (BOM)
  * DAC MCP4921 1x
  * MUX DG409 1x
