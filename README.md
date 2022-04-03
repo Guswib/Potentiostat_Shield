@@ -9,7 +9,7 @@ A potentiostat/galvanostat is a device used to control electrochemical experimen
 * [Wikipedia Galvanostat](https://en.wikipedia.org/wiki/Galvanostat)
 
 ## The Potentiostat Shield
-In software uses the following signals from the arduino in order to make a functionion potentiostat:
+In the software, the following signals from the arduino is used by the potentiostat shield in order to make a function potentiostat:
 
 * D5 - Cell Switch
 * D6,D7 - Current Range
@@ -20,7 +20,8 @@ In software uses the following signals from the arduino in order to make a funct
 
 ### How it works
 
-A potentiostat works with signed voltages and current. As the arduino uno can only measure and support 0-5V, a virtual ground must be introduced which is at 2.5V(50% of Vcc). The current-to-voltage converter(IE) and connected to the working electrode is kept at this virtual voltage. The potential of the working electrode is the voltage different between reference electrode and the working electrode. In order to obtain this value, the arduino must first measure both virtual ground and the voltage of the reference electrode, then calculate the difference between the values. Similarliy,  the current signal is to be measured. 
+A potentiostat works with signed voltages and currents. As the arduino uno can only measure and support 0-5V, a virtual ground must be introduced which is at 2.5V(50% of Vcc). 
+The current-to-voltage converter(IE) is connected to the working electrode. It measured the current and keeps the working electrode at the potential of the virtual voltage. The potential of the working electrode(E) is the voltage different between reference electrode and the working electrode. In order to obtain this value, the arduino must first measure both virtual ground and the voltage of the reference electrode, then calculate the difference between the values. Similarliy,  the current signal is to be measured. 
 
  
 
