@@ -18,13 +18,15 @@ The potentiostat has different has a cell switch and 4 different current ranges.
 
 The following image shows the schematics of potentiostat shield.
 
-![Potentiostat Shield](/assets/images/UNO_Pot_Shield_1_1_schematic.png)
+![Potentiostat Shield Schematic](/assets/images/UNO_Pot_Shield_1_1_schematic.png)
+
+Higher resolution image be seen in the [PDF](Schematic%20Design_%20UNO_%20Pot%20Shield_1_1.pdf)
 
 ### Potentiostat Shield PCB
 
 The following image shows the potentiostat shield PCB.
 
-![Potentiostat Shield](/assets/images/UNO_Pot_Shield_1_1_s.png)
+![Potentiostat Shield PCB](/assets/images/UNO_Pot_Shield_1_1_s.png)
 
 ### Compoents (BOM)
  * DAC MCP4921 1x
