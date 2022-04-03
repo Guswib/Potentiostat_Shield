@@ -29,14 +29,16 @@ The following image shows the potentiostat shield PCB.
 ### Compoents (BOM)
  * DAC MCP4921 1x
  * MUX DG409 1x
- * OPA 2ch - MCP607 1x
+ * OPA-2ch MCP607 1x
+ * Screw Terminal-3x    
  * Resistors
- ** 100 Ohm 1x
- ** 1 kOhm 1x
- ** 10 kOhm 6x
- ** 100 kOhm 1x
- ** 10 MOhm 1x
- *Capacitors
- **100 nF 3x
- ** 10 nF 1x
+   * 100 Ohm 1x
+   * 1 kOhm 1x
+   * 10 kOhm 6x
+   * 100 kOhm 1x
+   * 10 MOhm 1x
+ * Capacitors
+   * 10 nF 1x
+   * 100 nF 3x
+   
  
