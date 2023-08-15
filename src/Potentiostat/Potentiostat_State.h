@@ -52,19 +52,19 @@ class Potentiostat_State
 
     float FX_Vgnd();
 
-    int SPI_chipSelectPin = 10;
+    uint8_t SPI_chipSelectPin = 10;
 
-    int PIN_CEllSW = 5; // Cell switch 
-    int PIN_IR0 = 6;   //Current range 
-    int PIN_IR1 = 7;  // current range
+    uint8_t PIN_CEllSW = 5; // Cell switch 
+    uint8_t PIN_IR0 = 6;   //Current range 
+    uint8_t PIN_IR1 = 7;  // current range
 
     // Analog pins or the different signals
-    int PIN_CE = A0;  // 
-    int PIN_I = A2;  // Current signal
-    int PIN_RE = A1;  // Voltage signal
-    int PIN_GND = A0; // Reference voltage of the virtual ground.
+    uint8_t PIN_CE = A0;  // 
+    uint8_t PIN_I = A2;  // Current signal
+    uint8_t PIN_RE = A1;  // Voltage signal
+    uint8_t PIN_GND = A0; // Reference voltage of the virtual ground.
 
-    const String PotCMODES[3] = { "CEll", "E", "I"};
+    const String PotCMODES[3] = { "Cell", "E", "I"};
     const String PotIRanges[4] = { "1uA", "10uA", "100uA","1mA"};
 
 
