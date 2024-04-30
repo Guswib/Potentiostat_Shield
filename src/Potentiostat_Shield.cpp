@@ -54,7 +54,7 @@ Communicator.begin();
     DAC_SPI.begin(PotState.SPI_chipSelectPin); //
     DAC_SPI.setGain(2);// Gain 2
     DAC_SPI.setBufferedMode(1); //Buffered reference
-    DAC_SPI.analogWrite(2048, 0); //start value
+    DAC_SPI.write(2048, 0); //start value
 
   Serial.println(F("@---------------------------------------------------------"));
   
@@ -106,5 +106,5 @@ void Potentiostat_Shield::PID_Regulator()
 
 void Potentiostat_Shield::Analog_Write()
 {   
-    DAC_SPI.analogWrite(SW_Regulator.Output());
+    DAC_SPI.write(SW_Regulator.Output());
 }
