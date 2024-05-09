@@ -66,5 +66,23 @@ The following image shows the potentiostat shield PCB.
  * Capacitors
    * 10 nF 1x
    * 100 nF 3x
-   
+
+#Software
+
+| Command | #1    | #2    |
+| :-----: | :---: | :---: |
+| /? | 301   | 283   |
+| CELL | 301   | 283   |
+| CMODE | 301   | 283   |
+| IE | 301   | 283   |
+| SET | 301   | 283   |
+| ABORT | 301   | 283   |
+| HALT | 301   | 283   |
+| RAMP | 301   | 283   |
+| STEP | 301   | 283   |
+| VGND | 301   | 283   |
+| DEBUG | 301   | 283   |
+
+
+
   "/?", "CELL", "CMODE", "IE", "SET", "ABORT","HALT","DEBUG","RAMP", "VGND","STEP"
