@@ -68,28 +68,25 @@ The following image shows the potentiostat shield PCB.
    * 100 nF 3x
 
 #Software
-The supplied software controlles the shield, but also permits communication to a computer via serial commands. The BAUD rate is set to 115200.
+The supplied software controls the shield, but also permits communication to a computer via serial commands. The BAUD rate is set to 115200.
 
-The potentiostat is plotting repeptivly the current values of the time, E and i to the serial port. In order to filter out the data in contast to an eched commands, each data line starts with a "\t".
-| Command | Argument    | #2    |
-| :-----: | :---: | :---: |
-| "\t" | [TIME in ms]  | []   |
+The following table showes the commands that can be used to control the potentiostat. Values within a "[x]" are optional. All commands sent generate a responds from the potentiostat. All arguments should be seperated with a  normal space. All commands and replies end with a newline "\n".
 
-
-The folling list are used to control the potentiostat. Values within a "[x]" are optional. All commands are eched back as a 
-
-| Command | Argument    | #2    |
+| Command | Argument    | Info    |
 | :-----: | :---: | :---: |
 | /? |   | Prints the list of commands   |
-| CELL | [0 or 1]   |    |
-| CMODE | [0,1,2]   | Change the control mode.   |
-| IE | [n]   | Sets the current mode.  |
-| SET | [mV]   | Sets the setvalue of the control system in mV. In potentiostatic mode, the values corresponds the voltage between RE and WE in mV. In galvanostatic mode, the value correspond to the values of the IE converter in mV.    |
+| CELL | [0 or 1]   |  Sets or reads the cell switch.  |
+| CMODE | [0,1,2]   | Change the control mode:  "Cell", "E", "I"   |
+| IE | [n]   | Sets the current mode. Values corresponds to the exponent of the current.  |
+| SET | [mV]   | Sets the setvalue of the control system in mV. In potentiostatic mode(mode 0 and 1), the values corresponds the voltage between RE and WE in mV. In galvanostatic mode, the value correspond to the values of the IE converter in mV.    |
 | ABORT |    | Aborts any running technique   |
 | HALT |    | Halts or restarts any running technique  |
 | RAMP | V0 V1 V2 R S  | Generates linear sweeps startings at V0, and then to V1 and V2. R is the scan rate in mV/s and S is number of sweeps.   |
-| STEP | V0 t0 V1 t1 [V2 t2]  | Steps from V0 to V1 and then V2 if added. Values are in mV and should be an integer. t0,t1 and t2 are the duration in ms   |
+| STEP | V0 t0 V1 t1 [V2 t2]  | Steps from V0 to V1 and then V2 if added. Values are in mV and should be an integer. t0,t1 and t2 are the duration in ms.   |
 
 
+The potentiostat is plotting repetitively the values of the time, E and i to the serial port. In order to filter out the data in contast to an echoed commands, each data line starts with a "\t", and all values are also separated by tab("\t"). A typical line of data is then as follows:
 
-  "/?", "CELL", "CMODE", "IE", "SET", "ABORT","HALT","DEBUG","RAMP", "VGND","STEP"
+"\t" [TIME in ms] "\t" [E in mV] "\t" [i in A] "\n"
+
+
