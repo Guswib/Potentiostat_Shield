@@ -70,7 +70,7 @@ The following image shows the potentiostat shield PCB.
 #Software
 The supplied software controls the shield, but also permits communication to a computer via serial commands. The BAUD rate is set to 115200.
 
-The following table showes the commands that can be used to control the potentiostat. Values within a "[x]" are optional. All commands sent generate a responds from the potentiostat. All arguments should be seperated with a  normal space. All commands and replies end with a newline "\n".
+The following table showes the commands that can be used to control the potentiostat. Values within a "[x]" are optional. All commands sent generate a responds from the potentiostat. All command arguments are integers should be seperated with a normal space. All commands and replies end with a newline "\n".
 
 | Command | Argument    | Info    |
 | :-----: | :---: | :---: |
@@ -82,8 +82,7 @@ The following table showes the commands that can be used to control the potentio
 | ABORT |    | Aborts any running technique   |
 | HALT |    | Halts or restarts any running technique  |
 | RAMP | V0 V1 V2 R S  | Generates linear sweeps startings at V0, and then to V1 and V2. R is the scan rate in mV/s and S is number of sweeps.   |
-| STEP | V0 t0 V1 t1 [V2 t2]  | Steps from V0 to V1 and then V2 if added. Values are in mV and should be an integer. t0,t1 and t2 are the duration in ms.   |
-
+| STEP | V0 t0 V1 t1 [V2 t2]  | Steps from V0 to V1 and then V2, if added. Values are in mV and should be an integer. t0,t1 and t2 are the duration in ms.   |
 
 The potentiostat is plotting repetitively the values of the time, E and i to the serial port. In order to filter out the data in contast to an echoed commands, each data line starts with a "\t", and all values are also separated by tab("\t"). A typical line of data is then as follows:
 
