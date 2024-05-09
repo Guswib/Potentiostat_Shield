@@ -67,4 +67,4 @@ The following image shows the potentiostat shield PCB.
    * 10 nF 1x
    * 100 nF 3x
    
- 
+  "/?", "CELL", "CMODE", "IE", "SET", "ABORT","HALT","DEBUG","RAMP", "VGND","STEP"
