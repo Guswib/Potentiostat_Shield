@@ -41,6 +41,7 @@ Potentiostat_State::Potentiostat_State()
 
   CellSW=0;
   FX_CellSW();
+  FX_IRange(-5);
   FX_IRange();
   FX_cMode();
   
@@ -94,11 +95,13 @@ int Potentiostat_State::FX_CellSW()
 
 int Potentiostat_State::FX_IRange(int Value)
 {
-    if((Value>-7) && (Value<-2) )
+    if((Value>-6) && (Value<-1) )
               {
-                IRange = 6+Value;  // Value is the exponent of the current range(-3 to -6), and IRange is the 
-                Serial.print(F("RANGE"));
+                IE = Value;
+                IRange = 5+Value;  // Value is the exponent of the current range(-2 to -5), and IRange is the 
+                Serial.print(F("RANGE INDEX: "));
                 Serial.println(IRange);
+               
               }
              else
               {
@@ -123,7 +126,7 @@ int Potentiostat_State::FX_IRange()
     digitalWrite(PIN_IR1, IR1);
     delay(10);
     Serial.print(F("IE "));
-    Serial.print(IRange);
+    Serial.print(IE);
     Serial.print(F(" - "));
     Serial.print(F("IRange: "));
     Serial.print(PotIRanges[IRange]);

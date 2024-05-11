@@ -35,7 +35,8 @@ Communicator.begin();
     /////Sets the speed to fast if needed)
     
      delay(2000);
-
+    Serial.println();
+        Serial.println();
     Serial.println(F("@ ---------------------------------------------------------"));
     Serial.println("Ini start");
     Serial.println(F("@ ---------------------------------------------------------"));

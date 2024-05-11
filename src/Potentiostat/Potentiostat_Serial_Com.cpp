@@ -91,8 +91,8 @@ void Potentiostat_Serial_Com::GetCOM(Potentiostat_State& Pot,  Potentiostat_EC_T
         
         String COMMAND= COM;
         int index = COM.indexOf(" ");
-        Serial.print("Index:");
-        Serial.print(index);
+        //Serial.print("Index:");
+        //Serial.print(index);
         if(index>0){
             ReadWrite=1 ;
         COMMAND= COM.substring(0,index);
@@ -125,18 +125,18 @@ void Potentiostat_Serial_Com::GetCOM(Potentiostat_State& Pot,  Potentiostat_EC_T
 
 Serial.println(comSelect);
     switch (comSelect) {
-      case 0: // "/? 
+      case PotCom::allComs: // "/? 
         Serial.println(F("Here follows all Commands"));
          for (int i =0; i< ARRAYSIZE; i++) { Serial.println(PotCOM[i]);}
           break;
           ////////////////////////////////////////////////////////////////////
-      case 1:    // "CW" - Cell Switch
+      case PotCom::CELL :    // "CW" - Cell Switch
          if(ReadWrite>0) {
           Pot.CellSW=(bool)Com_Arg[0];} 
           Pot.FX_CellSW();
           break;
         //////////////////////////////////////////////////////////////
-        case 2:    // "Mode" - Control Mode
+        case PotCom::CMODE:    // "Mode" - Control Mode
          if(ReadWrite>0) 
           {
            Pot.FX_cMode(Com_Arg[0]);
@@ -144,7 +144,7 @@ Serial.println(comSelect);
           Pot.FX_cMode();
            break;
            //////////////////////////////////////////////////////////////
-        case 3:    // "IRange" - Current Range
+        case PotCom::IE:    // "IRange" - Current Range
          if(ReadWrite>0) 
           {
            Pot.FX_IRange(Com_Arg[0]);
@@ -152,7 +152,7 @@ Serial.println(comSelect);
           Pot.FX_IRange(); 
            break;
       /////////////////////////////////////////////////////////////////////////
-      case 4: // SET Control Value 
+      case PotCom::SET: // SET Control Value 
         
         if(ReadWrite>0 && Tech.EC_Tech==0) { 
           Tech.setValue=Com_Arg[0]; //mV        
@@ -162,7 +162,7 @@ Serial.println(comSelect);
              
         break;
         //////////////////////////////////////////////////////////////////////////////
-       case 5: // Abort
+       case PotCom::ABORT: // Abort
         
         Tech.EC_Tech=0;
         
@@ -170,7 +170,7 @@ Serial.println(comSelect);
              
         break;
         //////////////////////////////////////////////////////////////////////////////
-               case 6: // Halt
+               case PotCom::HALT : // Halt
         
         Tech.runHALT= !Tech.runHALT;
         if(Tech.runHALT)
@@ -179,7 +179,7 @@ Serial.println(comSelect);
               Serial.println(F("restarted"));
         break;
         //////////////////////////////////////////////////////////////////////////////
-                     case 7: // DEBUG
+                     case PotCom::DEBUG: // DEBUG
          if(ReadWrite>0) {
           Debug=Com_Arg[0];} 
         
@@ -191,7 +191,7 @@ Serial.println(comSelect);
         digitalWrite(5, HIGH);
         break;
         ////////////////////////////////////////////////////////////////////////
-      case 8:   // Ramp
+      case PotCom::RAMP:   // Ramp
         Tech.EC_Tech=1;
         Tech.Ramp_Rate=10;
          if(ReadWrite>0) 
@@ -236,11 +236,11 @@ Serial.println(comSelect);
         break;
         
         ////////////////////////////////////////////////////////////////////////////////////
-      case 9:
+      case PotCom::VGND :
         Pot.FX_Vgnd();
         break;
         ////////////////////////////////////////////////////////////////////////
-       case 10:
+       case PotCom::STEP :
         Tech.EC_Tech=2;
         if(ReadWrite>0) 
             {
@@ -279,8 +279,8 @@ Serial.println(comSelect);
 
         
    if (Serial.available() > 0) {
-            Serial.println(F("Clean")); 
-              Serial.println(  Serial.readStringUntil('/n'));
+            Serial.println(F("@Clean")); 
+              Serial.println(  Serial.readStringUntil('\n'));
    }
  } // End of if clause
 }  // End of function
@@ -306,7 +306,7 @@ void Potentiostat_Serial_Com::PlotData(Potentiostat_State& Pot)
         
         Serial.print("\t"); Serial.print(NewTime);
         Serial.print("\t"); Serial.print(AVGvalueRE2);
-        Serial.print("\t"); Serial.print(AVGvalueI2); Serial.print("E");  Serial.print(-8+Pot.IRange); // I2 is in mV, so 3 must be subtracted to the scale. 
+        Serial.print("\t"); Serial.print(AVGvalueI2); Serial.print("E");  Serial.print(Pot.IE-3); // I2 is in mV, so 3 must be subtracted to the scale. 
        
         Serial.println("");   
      

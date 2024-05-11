@@ -35,6 +35,9 @@
 #define ARRAYSIZE 20
 
 
+enum PotCom: uint8_t{ 
+  allComs, CELL, CMODE, IE, SET, ABORT , HALT, DEBUG, RAMP, VGND, STEP};
+
 class Potentiostat_Serial_Com
 {
     public:

@@ -38,7 +38,7 @@
 #ifndef _Potentiostat_Shield_H_
 #define _Potentiostat_Shield_H_
 
-#define Potentiostat_Shield_LIB_VERSION       (F("1.0.1"))
+#define Potentiostat_Shield_LIB_VERSION       (F("1.1.2"))
 
 
 

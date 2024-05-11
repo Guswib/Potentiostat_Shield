@@ -65,7 +65,7 @@ class Potentiostat_State
     uint8_t PIN_GND = A0; // Reference voltage of the virtual ground.
 
     const String PotCMODES[3] = { "Cell", "E", "I"};
-    const String PotIRanges[4] = { "1uA", "10uA", "100uA","1mA"};
+    const String PotIRanges[4] = { "10uA", "100uA", "1mA","10mA"};
 
 
     float ADC_value_2_V = 4.8875855;  // This value is the ration between the scale voltage 5000mV, and 1023, which corresponding to the max value.
@@ -73,17 +73,18 @@ class Potentiostat_State
 
     //Potentiostat Settings
     int CtrlMode = 1;  //control mode (P,G)
-    bool CellSW = 0;  
-    int IRange=0;
+    bool CellSW = 0;   //Cell switch value
+    int IE=0;          //Exponent for the current measurement.
+    int IRange=0;      //Index of the PotIRange
     bool runHALT = 0;  
 
-    int vGND = 512;  
+    int vGND = 512;     //virtual ground value.
 
     int valueCE = 0;        // value read from the pot
     int valueRE = 0;        // value read from the pot
     int valueI = 0; 
 
-    long AVGvalueCE = 0;
+    long AVGvalueCE = 0;    //averaging values
     long AVGvalueRE = 0;
     long AVGvalueI = 0;
 
