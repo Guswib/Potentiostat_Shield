@@ -65,14 +65,14 @@ long  int2nano=1000000;
                 if(((Ramp_Start>Ramp_MAX)||(Ramp_Start<Ramp_MIN))){Ramp_Sweeps=Ramp_Sweeps-1;}  
                 Serial.print(F("Start Ramp"));
                 Serial.println("");
-                Serial.println("Next Loop 0");
-                Serial.print("change to ");
+                Serial.println(F("Next Loop 0"));
+                Serial.print(F("change to "));
                if(inc>0){
-                  Serial.println("pos");
+                  Serial.println(F("pos"));
                   }
                 else
                 {
-                  Serial.println("neg");
+                  Serial.println(F("neg"));
                   }
               }
         }

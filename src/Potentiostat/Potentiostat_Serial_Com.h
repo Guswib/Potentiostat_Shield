@@ -43,8 +43,8 @@ class Potentiostat_Serial_Com
     public:
     Potentiostat_Serial_Com();
     void begin();
-     void GetCOM( Potentiostat_State &Pot, Potentiostat_EC_Tech &Tech);
-     void Potentiostat_Serial_Com::PlotData(Potentiostat_State& Pot);
+    void GetCOM( Potentiostat_State &Pot, Potentiostat_EC_Tech &Tech);
+    void PlotData(Potentiostat_State& Pot);
 
 
    // Potentiostat_Shield  Pot;
