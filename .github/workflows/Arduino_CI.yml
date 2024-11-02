@@ -31,7 +31,7 @@ jobs:
           #  the following variables to 'true' (as appropriate) will
           #  enforce that.
           #
-          EXPECT_EXAMPLES: false
+          EXPECT_EXAMPLES: true
           EXPECT_UNITTESTS: false
 
           # Although dependencies will be installed automatically via the
