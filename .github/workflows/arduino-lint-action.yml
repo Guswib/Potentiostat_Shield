@@ -16,7 +16,7 @@ jobs:
       uses: arduino/arduino-lint-action@v2.0.0
       with:
         # Path containing Arduino projects.
-        path: # optional
+        path: ./src # optional
         # Version of the Arduino Lint tool to use.
         version: # optional, default is 1.x
         # How strict the checks are.
