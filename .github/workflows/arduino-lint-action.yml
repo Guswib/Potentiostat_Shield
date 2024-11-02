@@ -2,7 +2,7 @@ name: arduino-lint-action
 
 on:
   workflow_dispatch:
-  workflow_call:
+  # workflow_call:
 
 jobs:
   arduino-lint-action-job:
