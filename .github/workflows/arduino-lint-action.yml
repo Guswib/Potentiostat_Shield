@@ -20,13 +20,13 @@ jobs:
         # Version of the Arduino Lint tool to use.
         version: # optional, default is 1.x
         # How strict the checks are.
-        compliance: # optional, default is specification
+        compliance: specification# optional, default is specification
         # Configuration of the checks for libraries in the Arduino Library Manager index.
         library-manager: update # optional
         # The type of project to check.
         project-type: # optional, default is all
         # Search path recursively for projects to check.
-        recursive: # optional, default is false
+        recursive: true # optional, default is false
         # Save a JSON formatted report on the checks to this file.
         report-file: # optional
         # Show more information on the checks being run.
