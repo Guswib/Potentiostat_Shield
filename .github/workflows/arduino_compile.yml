@@ -59,4 +59,4 @@ jobs:
       # in the build matrix.
       - name: Compile Sketch
         run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./examples/Potentiostat_Shield/Potentiostat_Shield.ino
-Editing arduino-cli-example/.github/workflows/test.yaml at master · arduino/arduino-cli-example
+# Editing arduino-cli-example/.github/workflows/test.yaml at master · arduino/arduino-cli-example
