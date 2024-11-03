@@ -58,5 +58,5 @@ jobs:
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
       - name: Compile Sketch
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./examples/Potentiostat_Shield/Potentiostat_Shield.ino
+        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./examples/Potentiostat_Shield/Potentiostat_Shield.ino --library ./src
 # Editing arduino-cli-example/.github/workflows/test.yaml at master · arduino/arduino-cli-example
